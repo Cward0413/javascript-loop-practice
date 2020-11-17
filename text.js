@@ -41,7 +41,17 @@ function runLoops() {
         "while-loop"    ==>  runWhileLoop()
         "do-while-loop" ==>  runDoWhileLoop()
     */
-
+    switch(selectedLoop){
+        case "while-loop":
+            runWhileLoop();
+            break;
+        case "do-while-loop":
+            runDoWhileLoop();
+            break;
+        case "for-loop":
+            runForLoop();
+            break;
+    }
 
 
 
@@ -60,7 +70,9 @@ function runWhileLoop() {
 
         (Or for a challenge, concatenate the first "number" letters of the alphabet!)
     */
-
+    while(output.length < number){
+        output = output + "A";
+    }
 
     $("#while-result").text(output);
 }
@@ -74,6 +86,10 @@ function runForLoop() {
         Use a for loop to add the numbers 1 through "number"
         into the variable "sum".
     */
+    var i;
+    for(i = 1; i < (number + 1); i++){
+        sum += i
+    }
 
     $("#for-result").text(sum);
 }
@@ -88,7 +104,11 @@ function runDoWhileLoop() {
         "number" to the string "output". For example, if "number"
         is 5, then output should be "12345".
     */
-
+    var i = 1;
+    do{
+        output = output + i;
+        i++
+    } while(i < (number + 1));
 
     $("#do-while-result").text(output);
 }
